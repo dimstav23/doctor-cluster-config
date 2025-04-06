@@ -19,4 +19,7 @@ in
 
   # enable libvirtd service
   virtualisation.libvirtd.enable = true;
+
+  # enable ksm
+  hardware.ksm.enable = true;
 }
