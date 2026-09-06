@@ -31,15 +31,6 @@ in
 
   services.fluent-bit = {
     enable = config.users.withSops;
-    # FLB_SIMD=Auto compiles the whole binary with -march=rv64gcv_zba when the
-    # compiler accepts it. The SG2042 (milkv pioneer) is rv64imafdc without
-    # V/Zba and SIGILLs at startup.
-    package = if pkgs.stdenv.hostPlatform.isRiscV64 then
-      pkgs.fluent-bit.overrideAttrs (old: {
-        cmakeFlags = old.cmakeFlags ++ [ (lib.cmakeFeature "FLB_SIMD" "Off") ];
-      })
-    else
-      pkgs.fluent-bit;
     settings = {
       service = {
         flush = 1;
