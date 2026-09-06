@@ -32,10 +32,6 @@
       keyFile = "/var/lib/acme/${config.networking.hostName}.r/key.pem";
       settings = {
         relaySrv = "thalheim.io";
-        flakelets = [
-          "tribuchet-worker"
-          "flakelet-agent"
-        ];
       };
     };
   };
