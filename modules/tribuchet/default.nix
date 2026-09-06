@@ -9,7 +9,6 @@
 {
   imports = [
     inputs.flakelet.nixosModules.flakelet
-    inputs.flakelet-relay.nixosModules.agent
   ];
 
   # Agent identity for the relays on eve/eva: ACME cert for <host>.r
@@ -25,18 +24,21 @@
   };
   networking.firewall.interfaces."tinc.retiolum".allowedTCPPorts = [ 80 ];
 
-  systemd.services.flakelet-agent = rec {
-    wants = [ "acme-${config.networking.hostName}.r.service" ];
-    after = wants;
+  services.flakelets.services.flakelet-agent = {
+    flake = "github:Mic92/flakelet-relay";
+    output = "flakelets.agent";
+    settings = {
+      certFile = "/var/lib/acme/${config.networking.hostName}.r/fullchain.pem";
+      keyFile = "/var/lib/acme/${config.networking.hostName}.r/key.pem";
+      settings = {
+        relaySrv = "thalheim.io";
+        flakelets = [
+          "tribuchet-worker"
+          "flakelet-agent"
+        ];
+      };
+    };
   };
-  services.flakelet-agent = {
-    enable = true;
-    relaySrv = "thalheim.io";
-    certFile = "/var/lib/acme/${config.networking.hostName}.r/fullchain.pem";
-    keyFile = "/var/lib/acme/${config.networking.hostName}.r/key.pem";
-    flakelets = [ "tribuchet-worker" ];
-  };
-
 
   # signed by the CA from eve's clan vars generator "tribuchet"
   sops.secrets."tribuchet-worker-key" = { };
