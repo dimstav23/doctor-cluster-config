@@ -3,13 +3,14 @@
   imports = [
     ../modules/hardware/poweredge7625.nix
     ../modules/nfs/client.nix
-    # Native-GPU window (patrick, 2026-09-04): the veritas SVSM host
-    # kernel (6.11-vc, amd_sev_svsm.nix) breaks native CUDA (cuInit=3),
-    # so jamie runs the default kernel with the nvidia host driver for
-    # now. Swap amd_sev_svsm.nix back in for veritas work.
-    ../modules/amd_sev_snp.nix
-    #../modules/amd_sev_svsm.nix
-    ../modules/nvidia
+    # jamie alternates between two lanes (patrick, Wallet-GPU):
+    #  - CoCo/veritas: SVSM host kernel 6.11-vc, no host nvidia driver
+    #  - native GPU:   amd_sev_snp.nix + ../modules/nvidia (6.11-vc
+    #                  breaks cuInit)
+    # Flip these three lines, do not deploy from an old checkout.
+    #../modules/amd_sev_snp.nix
+    ../modules/amd_sev_svsm.nix
+    #../modules/nvidia
     ../modules/vfio/iommu-amd.nix
 
     ../modules/kata-container
