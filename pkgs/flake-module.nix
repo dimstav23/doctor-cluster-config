@@ -17,7 +17,7 @@
       };
       coyote-driver = pkgs.callPackage ./xilinx/coyote-driver.nix {
         src = inputs.coyote;
-        inherit (pkgs.linuxPackages_6_8) kernel;
+        inherit (pkgs.linuxPackages) kernel;
       };
       xntools-core = pkgs.callPackage ./xilinx/xntools-core.nix { };
 

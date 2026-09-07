@@ -87,7 +87,7 @@
     flake-registry.url = "github:NixOS/flake-registry";
     flake-registry.flake = false;
 
-    coyote.url = "github:fpgasystems/Coyote/9c00353a474ad78ddafae7506c2d08461f6b6d1a";
+    coyote.url = "github:Mic92/Coyote/6a3ffee7bc2eaf8cd1e988729a45180893cbe4ba"; # https://github.com/fpgasystems/Coyote/pull/236
     coyote.flake = false;
   };
 
