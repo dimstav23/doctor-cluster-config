@@ -19,17 +19,17 @@
     "coyote": {
       "flake": false,
       "locked": {
-        "lastModified": 1788763547,
-        "narHash": "sha256-DuB7J2eOFMnbyDW9Y9AiNdC52HMEjCvnCS2fG8jmcdQ=",
+        "lastModified": 1788767558,
+        "narHash": "sha256-u1IkKxaLeKn6WfcaxWJuV/oUEBBNNn+qEhjYeUr62CQ=",
         "owner": "Mic92",
         "repo": "Coyote",
-        "rev": "6a3ffee7bc2eaf8cd1e988729a45180893cbe4ba",
+        "rev": "f4b0bd03901e11e2f266ad619e3bd46eacd72f54",
         "type": "github"
       },
       "original": {
         "owner": "Mic92",
         "repo": "Coyote",
-        "rev": "6a3ffee7bc2eaf8cd1e988729a45180893cbe4ba",
+        "rev": "f4b0bd03901e11e2f266ad619e3bd46eacd72f54",
         "type": "github"
       }
     },
