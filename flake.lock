@@ -637,11 +637,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785360342,
-        "narHash": "sha256-c70POvaCP2VzLEnrizrldC4Kc225kAVXgw32NmcReXo=",
+        "lastModified": 1788122641,
+        "narHash": "sha256-Z9lNlkcyIDW4k1HrcpbZu2JvoAdmbw2bZ2GDOzTzgX8=",
         "owner": "Mic92",
         "repo": "zfs-dedup",
-        "rev": "7b90d12ceb8eee94fbce90055508dc1da632103a",
+        "rev": "285861590e7122c3588d95dd03a6107068a8721f",
         "type": "github"
       },
       "original": {
