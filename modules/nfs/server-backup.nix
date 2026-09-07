@@ -22,6 +22,9 @@
           # when switching out nfs server and server backup, we want telegraf no
           # longer to serve stale monitoring files.
           "${pkgs.coreutils}/bin/rm -rf /var/log/telegraf/syncoid-home /var/log/telegraf/syncoid-share"
+          # leftover from borg job when this host was primary; syncoid never prunes it
+          "-${pkgs.zfs}/bin/zfs destroy -r nfs-home/home@borg"
+          "-${pkgs.zfs}/bin/zfs destroy -r nfs-data/share@borg"
           # add nfs server backup ip
           "-${pkgs.iproute2}/bin/ip addr add 2a09:80c0:102::f000:1/64 dev ${config.services.nfs-server.interface}"
         ];
