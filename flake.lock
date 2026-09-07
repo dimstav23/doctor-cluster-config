@@ -19,17 +19,17 @@
     "coyote": {
       "flake": false,
       "locked": {
-        "lastModified": 1783057848,
-        "narHash": "sha256-+TTF9jS+g0fuXTxfDmhrTvOowuxRtm/dae/PfjfQBBk=",
-        "owner": "fpgasystems",
+        "lastModified": 1788763547,
+        "narHash": "sha256-DuB7J2eOFMnbyDW9Y9AiNdC52HMEjCvnCS2fG8jmcdQ=",
+        "owner": "Mic92",
         "repo": "Coyote",
-        "rev": "9c00353a474ad78ddafae7506c2d08461f6b6d1a",
+        "rev": "6a3ffee7bc2eaf8cd1e988729a45180893cbe4ba",
         "type": "github"
       },
       "original": {
-        "owner": "fpgasystems",
+        "owner": "Mic92",
         "repo": "Coyote",
-        "rev": "9c00353a474ad78ddafae7506c2d08461f6b6d1a",
+        "rev": "6a3ffee7bc2eaf8cd1e988729a45180893cbe4ba",
         "type": "github"
       }
     },
