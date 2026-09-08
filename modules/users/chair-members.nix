@@ -136,7 +136,7 @@ let
 
   ilgazKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHd8sv/lztuBI59iI5Pp4P6P/K0TkK9GyN8hS045pyK+ ilgaz@ilgazs-MacBook-Air.local"
-  ]
+  ];
 
   extraGroups = [
     "wheel"
