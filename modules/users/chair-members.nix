@@ -134,6 +134,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBevyJ5i0237DNoS29F9aii2AJwrSxXNz3hP61hWXfRl sandro@reaper.gierens.de"
   ];
 
+  ilgazKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHd8sv/lztuBI59iI5Pp4P6P/K0TkK9GyN8hS045pyK+ ilgaz@ilgazs-MacBook-Air.local"
+  ];
+
   extraGroups = [
     "wheel"
     "docker"
@@ -451,6 +455,19 @@ in
         openssh.authorizedKeys.keys = gierensKeys;
         xrdpAccess = false;
       };
+
+      # Ilgaz Er
+      ilgaz = {
+        isNormalUser = true;
+        home = "/home/ilgaz";
+        inherit extraGroups;
+        shell = "/run/current-system/sw/bin/zsh";
+        uid = 2007;
+        allowedHosts = [ "all" ];
+        openssh.authorizedKeys.keys = ilgazKeys;
+      };
+
+
 
       # add staff to root account as well
       root.openssh.authorizedKeys.keys =
